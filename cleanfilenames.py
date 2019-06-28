@@ -30,17 +30,13 @@ def clean_file_names(files):
             if current.count('.') == 2:
                 current = current.split('.', 1)[-1]
                 extlen = len(current)
-                    file['extlen'] = extlen
-                    file['filename'] = current
-                    continue
 
                 name = ''
                 for ext in static.extensions:
                     if current == ext:
                         name = ext
-                        break
-                file['filename'] = name
-                file['extlen'] = extlen
+                    file['filename'] = name
+                    file['extlen'] = extlen
                 
         return files
     except Exception as e:
